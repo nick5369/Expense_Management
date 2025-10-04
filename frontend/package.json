@@ -1,0 +1,8 @@
+{
+  "name": "odoo-expenses-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "echo \"Run your frontend dev server (e.g., Vite or CRA)\" && exit 0"
+  }
+}
