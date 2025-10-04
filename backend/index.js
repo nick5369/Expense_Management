@@ -6,7 +6,15 @@ require("dotenv").config();
 const Company = require("./models/company");
 
 const app = express();
-app.use(cors());
+// Configure CORS so that credentialed requests from the frontend are allowed.
+// Allow origin to be set via FRONTEND_URL env var, defaulting to localhost:5173 during development.
+const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:5173'
+app.use(
+  cors({
+    origin: FRONTEND_URL,
+    credentials: true,
+  })
+)
 app.use(express.json());
 
 const PORT = process.env.PORT || 8000;
